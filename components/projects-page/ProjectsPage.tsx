@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import ProjectsSidebar from './ProjectsSidebar';
@@ -8,7 +9,29 @@ import ProjectDetail from './ProjectDetail';
 import { detailedProjects } from '@/data/projects';
 
 export default function ProjectsPage() {
-  const [activeProjectId, setActiveProjectId] = useState(detailedProjects[4].id); // Start with Voice Biometrics
+  const searchParams = useSearchParams();
+  const projectParam = searchParams.get('project');
+
+  // Find the project from URL params, or default to Voice Biometrics
+  const getInitialProject = () => {
+    if (projectParam) {
+      const found = detailedProjects.find((p) => p.id === projectParam);
+      if (found) return found.id;
+    }
+    return detailedProjects[4].id; // Default to Voice Biometrics
+  };
+
+  const [activeProjectId, setActiveProjectId] = useState(getInitialProject);
+
+  // Update active project when URL params change
+  useEffect(() => {
+    if (projectParam) {
+      const found = detailedProjects.find((p) => p.id === projectParam);
+      if (found) {
+        setActiveProjectId(found.id);
+      }
+    }
+  }, [projectParam]);
 
   const activeProject = detailedProjects.find((p) => p.id === activeProjectId) || detailedProjects[0];
   const currentIndex = detailedProjects.findIndex((p) => p.id === activeProjectId);

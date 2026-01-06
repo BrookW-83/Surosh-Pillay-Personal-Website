@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { servicesData } from '@/data/home';
 
 export default function Services() {
@@ -60,16 +61,16 @@ export default function Services() {
                       <p className="text-sm font-noto font-semibold text-slate-500 uppercase tracking-wide">
                         Featured Topics
                       </p>
-                      <a href="#" className="flex items-center gap-3 text-slate-900 hover:text-slate-700 transition-all group/link">
+                      <Link href="/services?workshop=data-storytelling" className="flex items-center gap-3 text-slate-900 hover:text-slate-700 transition-all group/link">
                         <span className="h-1.5 w-1.5 rounded-full bg-slate-900 group-hover/link:w-8 transition-all duration-300"></span>
                         <span className="text-lg font-noto font-medium">Data storytelling for impact</span>
                         <span className="text-xl group-hover/link:translate-x-2 transition-transform duration-300">→</span>
-                      </a>
-                      <a href="#" className="flex items-center gap-3 text-slate-900 hover:text-slate-700 transition-all group/link">
+                      </Link>
+                      <Link href="/services?workshop=ai-products" className="flex items-center gap-3 text-slate-900 hover:text-slate-700 transition-all group/link">
                         <span className="h-1.5 w-1.5 rounded-full bg-slate-900 group-hover/link:w-8 transition-all duration-300"></span>
                         <span className="text-lg font-noto font-medium">Building AI products that actually work</span>
                         <span className="text-xl group-hover/link:translate-x-2 transition-transform duration-300">→</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
 

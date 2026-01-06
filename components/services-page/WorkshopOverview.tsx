@@ -9,41 +9,41 @@ interface WorkshopOverviewProps {
 
 export default function WorkshopOverview({ workshop }: WorkshopOverviewProps) {
   return (
-    <section className="relative bg-white py-24">
+    <section className="relative bg-white py-12 sm:py-16 md:py-24">
       {/* Large Number Background */}
-      <div className="absolute top-2 md:top-10 right-4 md:right-10 text-[8rem] md:text-[20rem] font-noto font-bold text-gold/5 select-none">
+      <div className="absolute top-2 md:top-10 right-4 md:right-10 text-[6rem] sm:text-[10rem] md:text-[15rem] lg:text-[20rem] xl:text-[25rem] font-noto font-bold text-gold/5 select-none">
         01
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           {/* Left Column - Text Content */}
-          <div className="space-y-10 animate-slideInLeft">
+          <div className="space-y-6 sm:space-y-8 md:space-y-10 animate-slideInLeft">
             {/* Title with Side Accent */}
-            <div className="border-l-8 border-gold pl-6">
-              <h2 className="text-5xl md:text-6xl font-noto font-bold text-navy leading-tight">
+            <div className="border-l-4 sm:border-l-8 border-gold pl-4 sm:pl-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-noto font-bold text-navy leading-tight">
                 {workshop.title}
               </h2>
             </div>
 
             {/* Tagline - Featured */}
-            <div className="relative bg-navy text-white p-8 transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-              <p className="text-2xl font-noto font-bold leading-relaxed">
+            <div className="relative bg-navy text-white p-4 sm:p-6 md:p-8 transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+              <p className="text-lg sm:text-xl md:text-2xl font-noto font-bold leading-relaxed">
                 {workshop.tagline}
               </p>
-              <div className="absolute top-2 right-2 w-16 h-16 border-4 border-gold"></div>
+              <div className="absolute top-2 right-2 w-10 h-10 sm:w-16 sm:h-16 border-2 sm:border-4 border-gold"></div>
             </div>
 
             {/* Content Blocks */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {[workshop.description, workshop.problem, workshop.solution].map((text, index) => (
                 <div
                   key={index}
-                  className="relative pl-12 py-4 group animate-fadeInSequence"
+                  className="relative pl-6 sm:pl-8 md:pl-12 py-3 sm:py-4 group animate-fadeInSequence"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="absolute left-0 top-0 bottom-0 w-2 bg-gold group-hover:w-4 transition-all"></div>
-                  <p className="text-foreground font-noto text-lg leading-relaxed">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 sm:w-2 bg-gold group-hover:w-2 sm:group-hover:w-4 transition-all"></div>
+                  <p className="text-foreground font-noto text-sm sm:text-base md:text-lg leading-relaxed">
                     {text}
                   </p>
                 </div>
@@ -52,7 +52,7 @@ export default function WorkshopOverview({ workshop }: WorkshopOverviewProps) {
           </div>
 
           {/* Right Column - Image & Outcomes */}
-          <div className="flex flex-col gap-10 animate-slideInRight">
+          <div className="flex flex-col gap-6 sm:gap-8 md:gap-10 animate-slideInRight">
             {/* Workshop Image with Overlay Frame */}
             <div className="relative">
               <div className="relative aspect-video overflow-hidden group">
@@ -62,36 +62,36 @@ export default function WorkshopOverview({ workshop }: WorkshopOverviewProps) {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 border-8 border-navy group-hover:border-gold transition-colors duration-500"></div>
+                <div className="absolute inset-0 border-4 sm:border-8 border-navy group-hover:border-gold transition-colors duration-500"></div>
               </div>
-              {/* Corner Accents */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-gold"></div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-navy"></div>
+              {/* Corner Accents - Hidden on very small screens */}
+              <div className="hidden sm:block absolute -top-4 -left-4 w-16 h-16 md:w-24 md:h-24 bg-gold"></div>
+              <div className="hidden sm:block absolute -bottom-4 -right-4 w-16 h-16 md:w-24 md:h-24 bg-navy"></div>
             </div>
 
             {/* Outcomes - Bold Box Design */}
-            <div className="relative bg-light-bg border-4 border-navy p-10">
-              <div className="absolute -top-4 -left-4 bg-gold px-6 py-2">
-                <h3 className="font-noto font-bold text-xl text-navy">
+            <div className="relative bg-light-bg border-2 sm:border-4 border-navy p-4 sm:p-6 md:p-10 mt-4 sm:mt-0">
+              <div className="absolute -top-3 sm:-top-4 left-2 sm:-left-4 bg-gold px-3 sm:px-6 py-1 sm:py-2">
+                <h3 className="font-noto font-bold text-base sm:text-xl text-navy">
                   OUTCOMES
                 </h3>
               </div>
 
-              <p className="font-noto text-foreground mb-6 font-bold text-lg mt-6">
+              <p className="font-noto text-foreground mb-4 sm:mb-6 font-bold text-base sm:text-lg mt-4 sm:mt-6">
                 By the end, participants will be able to:
               </p>
 
-              <ul className="space-y-5">
+              <ul className="space-y-3 sm:space-y-5">
                 {workshop.outcomes.map((outcome, index) => (
                   <li
                     key={index}
-                    className="flex items-start gap-4 animate-popIn"
+                    className="flex items-start gap-3 sm:gap-4 animate-popIn"
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
-                    <span className="flex-shrink-0 w-8 h-8 bg-navy text-gold flex items-center justify-center font-bold text-sm">
+                    <span className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-navy text-gold flex items-center justify-center font-bold text-xs sm:text-sm">
                       {index + 1}
                     </span>
-                    <span className="text-foreground font-noto leading-relaxed flex-1">
+                    <span className="text-foreground font-noto leading-relaxed flex-1 text-sm sm:text-base">
                       {outcome}
                     </span>
                   </li>
@@ -100,7 +100,7 @@ export default function WorkshopOverview({ workshop }: WorkshopOverviewProps) {
             </div>
 
             {/* CTA Button - Bold Style */}
-            <button className="group relative w-full bg-gold text-navy px-8 py-6 font-noto font-bold text-xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border-4 border-navy">
+            <button className="group relative w-full bg-gold text-navy px-6 sm:px-8 py-4 sm:py-6 font-noto font-bold text-lg sm:text-xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border-2 sm:border-4 border-navy">
               <span className="relative z-10 group-hover:text-white transition-colors">
                 APPLY NOW →
               </span>

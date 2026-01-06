@@ -9,6 +9,7 @@ export interface Project {
   description?: string;
   image: string;
   link?: string;
+  slug?: string; // Links to detailed project page
 }
 
 export interface PartnerLogo {

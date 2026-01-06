@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { projectsData } from '@/data/home';
 import ProjectCard from './ProjectCard';
 
@@ -54,11 +55,11 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="relative">
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Hidden on mobile, shown on md+ */}
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-16 z-10 bg-navy text-white rounded-full p-4 shadow-xl disabled:opacity-20 disabled:cursor-not-allowed hover:scale-110 hover:bg-dark-navy transition-all duration-300"
+            className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-16 z-10 bg-navy text-white rounded-full p-4 shadow-xl disabled:opacity-20 disabled:cursor-not-allowed hover:scale-110 hover:bg-dark-navy transition-all duration-300"
             aria-label="Previous projects"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,7 +70,7 @@ export default function Projects() {
           <button
             onClick={nextSlide}
             disabled={currentIndex >= projectsData.length - itemsPerPage}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-16 z-10 bg-navy text-white rounded-full p-4 shadow-xl disabled:opacity-20 disabled:cursor-not-allowed hover:scale-110 hover:bg-dark-navy transition-all duration-300"
+            className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-16 z-10 bg-navy text-white rounded-full p-4 shadow-xl disabled:opacity-20 disabled:cursor-not-allowed hover:scale-110 hover:bg-dark-navy transition-all duration-300"
             aria-label="Next projects"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,16 +93,44 @@ export default function Projects() {
               </div>
             ))}
           </div>
+
+          {/* Mobile Navigation Arrows - Vertical below grid */}
+          <div className="flex md:hidden justify-center gap-4 mt-8">
+            <button
+              onClick={prevSlide}
+              disabled={currentIndex === 0}
+              className="bg-navy text-white rounded-full p-3 shadow-xl disabled:opacity-20 disabled:cursor-not-allowed hover:scale-110 hover:bg-dark-navy transition-all duration-300"
+              aria-label="Previous projects"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              onClick={nextSlide}
+              disabled={currentIndex >= projectsData.length - itemsPerPage}
+              className="bg-navy text-white rounded-full p-3 shadow-xl disabled:opacity-20 disabled:cursor-not-allowed hover:scale-110 hover:bg-dark-navy transition-all duration-300"
+              aria-label="Next projects"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* View All Button */}
         <div className="text-center mt-16">
-          <button className="group relative border-2 border-navy text-navy px-10 py-4 rounded-full font-noto font-bold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl">
+          <Link
+            href="/projects"
+            className="group relative inline-block border-2 border-navy text-navy px-10 py-4 rounded-full font-noto font-bold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl"
+          >
             <span className="relative z-10 group-hover:text-white transition-colors duration-300">
               View All Projects
             </span>
             <span className="absolute inset-0 bg-navy transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-          </button>
+          </Link>
         </div>
       </div>
 

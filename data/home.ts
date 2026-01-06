@@ -10,7 +10,7 @@ export const heroData = {
   },
   secondaryCTA: {
     text: "Contact",
-    href: "#contact",
+    href: "#social",
   },
   image: "/images/home/surosh_pillay.svg",
 };
@@ -23,7 +23,7 @@ export const aboutData = {
 
 I began my career after completing a British Telecom–sponsored PhD in Machine Learning, leading data science in a FTSE-20 company where I built predictive models and automated decision systems at scale. That experience taught me a defining lesson: insight alone doesn’t drive change — people, alignment, and action do.
 
-Today, I serve as VP of Impact (and unofficial Head Sherpa) at the African Leadership Group, supporting one of the most ambitious missions on the continent — creating dignified, fulfilling work opportunities for millions of young Africans. My work spans building high-performing teams, designing decision and learning systems, and developing real-time impact intelligence that helps leaders make clearer, faster decisions and scale what works. 
+Today, I serve as VP of Impact (and unofficial Head Sherpa) at the African Leadership Group, supporting one of the most ambitious missions on the continent - creating dignified, fulfilling work opportunities for millions of young Africans. My work spans building high-performing teams, designing decision and learning systems, and developing real-time impact intelligence that helps leaders make clearer, faster decisions and scale what works. 
 
 Alongside this, I’ve spent over 15 years in public speaking and leadership development through Toastmasters International, becoming a UK & Ireland District and Division finalist. This shaped how I work today — making complex ideas simple, human, and actionable. I work with leaders and entrepreneurs to build teams, systems, and AI-driven intelligence that focus relentlessly on outcomes over theory.`,
 
@@ -44,23 +44,39 @@ Alongside this, I’ve spent over 15 years in public speaking and leadership dev
 export const projectsData: Project[] = [
   {
     id: "1",
-    title: "Real-time order tracking",
+    title: "Real-time impact reporting at scale",
     image: "/images/home/project_1.svg",
+    slug: "real-time-impact-reporting",
   },
   {
     id: "2",
-    title: "KEY LIME LION",
+    title: "MyFirstMillion Experiential simulation",
     image: "/images/home/project_2.svg",
+    slug: "myfirstmillion-experiential",
   },
   {
     id: "3",
-    title: "Important Sorcery Inventory System",
-    image: "/images/home/project_3.svg",
+    title: "Voice biometrics for Telephone banking",
+    image: "/images/projects/voice_biometrics.jpeg",
+    slug: "voice-biometrics-banking",
   },
   {
     id: "4",
-    title: "Eco Connect Tracing Inc",
-    image: "/images/home/project_1.svg",
+    title: "PikSou money saving app",
+    image: "/images/projects/piksou.jpeg",
+    slug: "piksou-money-saving",
+  },
+  {
+    id: "5",
+    title: "BabelFish Machine Translation",
+    image: "/images/projects/babelfish.svg",
+    slug: "babelfish-translation",
+  },
+  {
+    id: "6",
+    title: "Knob Dynamic Pricing for E-commerce",
+    image: "/images/projects/koob.png",
+    slug: "koob-dynamic-pricing",
   },
 ];
 

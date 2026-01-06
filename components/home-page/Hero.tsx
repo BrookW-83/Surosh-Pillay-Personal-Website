@@ -16,36 +16,34 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="container max-w-7xl mx-auto px-6 md:px-12 py-24 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16 md:py-24 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Text */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <h1 className="font-bold font-noto leading-tight tracking-tight">
-              <span className="text-3xl md:text-4xl lg:text-5xl block mb-2 whitespace-nowrap">
-                Transforming <span className="bg-gold px-3 py-1 inline-block text-white">Ambition</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl block mb-2">
+                Transforming <span className="bg-gold px-2 sm:px-3 py-1 inline-block text-white">Ambition</span>
               </span>
-              <span className="text-3xl md:text-4xl lg:text-5xl block whitespace-nowrap">
-                into <span className="bg-navy text-white px-3 py-1 inline-block">Measurable Impact.</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl block">
+                into <span className="bg-navy text-white px-2 sm:px-3 py-1 inline-block">Measurable Impact.</span>
               </span>
             </h1>
 
-            <p className="font-noto text-xl text-[#7B7B7B] leading-relaxed">
+            <p className="font-noto text-base sm:text-lg md:text-xl text-[#7B7B7B] leading-relaxed">
               {heroData.subheadline}
             </p>
 
-            <div className="flex flex-wrap gap-6 mt-12">
+            <div className="flex flex-wrap gap-4 sm:gap-6 mt-8 md:mt-12">
               <a
                 href={heroData.primaryCTA.href}
-                className="bg-navy text-white rounded-full font-bold text-lg inline-block hover:bg-opacity-90 transition-all shadow-sm"
-                style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem', paddingTop: '0.75rem', paddingBottom: '0.75rem' }}
+                className="bg-navy text-white rounded-full font-bold text-base sm:text-lg inline-block hover:bg-gold hover:scale-105 hover:shadow-xl transition-all duration-300 shadow-sm px-6 sm:px-10 py-3"
               >
                 {heroData.primaryCTA.text}
               </a>
 
               <a
                 href={heroData.secondaryCTA.href}
-                className="border-2 border-navy text-navy rounded-full font-bold text-lg inline-block hover:bg-navy hover:text-white transition-all"
-                style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem', paddingTop: '0.75rem', paddingBottom: '0.75rem' }}
+                className="border-2 border-navy text-navy rounded-full font-bold text-base sm:text-lg inline-block hover:bg-navy hover:text-white transition-all duration-300 px-6 sm:px-10 py-3"
               >
                 {heroData.secondaryCTA.text}
               </a>
@@ -70,7 +68,7 @@ export default function Hero() {
                 Surosh Pillay
               </h3>
               <p className="bg-white text-base lg:text-lg text-gold font-semibold leading-relaxed">
-                VP of Impact, Data Storytelling Coach,<br />
+               Impact Entrepreneur,<br />
                 PhD in Machine Learning
               </p>
             </div>

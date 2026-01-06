@@ -25,13 +25,13 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 z-50 w-full h-16 transition-colors duration-300 ${
+    <header className={`fixed top-0 left-0 z-50 w-full h-14 sm:h-16 transition-colors duration-300 ${
       isScrolledToFooter ? 'bg-navy' : 'bg-white'
     }`}>
-      <nav className="max-w-7xl mx-auto px-12 h-full">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
-          <div className="h-12 w-auto relative">
+          <div className="h-10 sm:h-12 w-auto relative">
             <Image
               src={isScrolledToFooter ? "/images/shared/secondary_logo.svg" : "/images/shared/primary_logo.svg"}
               alt="Surosh Pillay"
@@ -106,12 +106,12 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t pt-4 bg-white">
+          <div className="md:hidden mt-2 sm:mt-4 pb-4 border-t pt-3 sm:pt-4 bg-white">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block py-3 text-foreground hover:text-navy transition-colors text-center text-lg font-semibold"
+                className="block py-2 sm:py-3 text-foreground hover:text-navy transition-colors text-center text-base sm:text-lg font-semibold"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
@@ -119,7 +119,7 @@ export default function Header() {
             ))}
             <a
               href="#contact"
-              className="block bg-navy text-white px-6 py-3 rounded-full text-center hover:bg-opacity-90 transition-all mt-4 mx-auto max-w-xs"
+              className="block bg-navy text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-center text-sm sm:text-base hover:bg-opacity-90 transition-all mt-3 sm:mt-4 mx-auto max-w-[200px] sm:max-w-xs"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact Me
